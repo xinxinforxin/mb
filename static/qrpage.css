@@ -1,0 +1,55 @@
+.page{
+    background-image: url(image/qrpage2.png);
+    width:100%;
+    height: 100%;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0em;
+    z-index: -1;
+}
+#content{
+    position: absolute;
+    top:13.5em;
+    width: 100%;
+}
+#qrcode{
+    width:50%;
+    margin-left: 25%;
+}
+.font1{
+    font-size: 1.3em;
+    width:30%;
+    margin-top: 0.3em;
+    margin-left: 35%;
+    color:#fff;
+}
+.font2{
+    width:40%;
+    margin-top: 0.1em;
+    margin-left: 30%;
+    color:#fff;
+}
+@media only screen and (min-width: 300px)and (max-width: 350px){
+    #content{
+    top:11.5em;
+}
+.font1{
+    width:40%;
+    margin-left: 33%;
+}
+.font2{
+    width:46%;
+    margin-top: 0.1em;
+    margin-left: 27%;
+    color:#fff;
+}
+}
+@media only screen and (min-width: 351px)and (max-width: 400px){
+
+}
+@media only screen and (min-width: 401px){
+    #content{
+    top:14.5em;
+}
+
+}

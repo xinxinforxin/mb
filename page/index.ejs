@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
+    <title></title>
+    <link rel="stylesheet" href="../../common/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
+</head>
+<body>
+    <section class="page">
+    <div class="topbtn"><img src="../static/image/topbtn.png" alt="" class=""></div>
+    <div class="moveheader">
+        <ul>
+            <li>首页</li>
+            <li>关于我们</li>
+            <li>官方微信</li>
+            <li>下载客户端</li>
+        </ul>
+    </div>
+    <div class="lingqian"><img src="../static/image/btn2.png" alt=""></div>
+    <div class="guobao"><img src="../static/image/btn2.png" alt=""></div>
+    
+    </section>
+    <footer class="floatbottom">
+        <div class="btn3"><img src="../static/image/btn3.png" alt=""></div>
+    </footer>
+</body>
+<script src="../../common/static/js/zepto.min.js"></script>
+<script>
+    var flat = 0;
+    $('.topbtn').tap(function(){
+        if(flat == 0){
+            $('.moveheader').animate({height:'3em'},500,'ease-in');
+            flat++;
+        }
+        else{
+            $('.moveheader').animate({height:'0em'},500,'ease-in');
+            flat--;
+        }
+    });
+    $('.lingqian,.guobao,.btn3').tap(function(){
+        $.ajax({
+          type: 'GET',
+          url: '/clickRecord',
+          data: { name: "立刻存入" },
+          dataType: 'json',
+          timeout: 300,
+          success: function(data){
+          }
+        })
+        window.location.href='https://h5.yeamoney.cn/guide';
+    });
+    $('.btn3').tap(function(){
+        $.ajax({
+          type: 'GET',
+          url: '/clickRecord',
+          data: { name: "马上领取" },
+          dataType: 'json',
+          timeout: 300,
+          success: function(data){
+            
+          }
+        })
+        window.location.href='https://h5.yeamoney.cn/guide';
+    });
+    $('.moveheader>ul>li:nth-of-type(4)').tap(function(){
+        $.ajax({
+          type: 'GET',
+          url: '/clickRecord',
+          data: { btnName: "下载客户端" },
+          dataType: 'json',
+          timeout: 300,
+          success: function(data){
+          }
+        })        
+        window.location.href='https://h5.yeamoney.cn/guide';}
+    );
+    $('.moveheader>ul>li:nth-of-type(1)').tap(function(){
+        $.ajax({
+          type: 'GET',
+          url: '/clickRecord',
+          data: { btnName: "首页" },
+          dataType: 'json',
+          timeout: 300,
+          success: function(data){
+          }
+        }) 
+        window.location.reload();
+    });
+    $('.moveheader>ul>li:nth-of-type(2)').tap(function(){
+        $.ajax({
+          type: 'GET',
+          url: '/clickRecord',
+          data: { btnName: "关于我们" },
+          dataType: 'json',
+          timeout: 300,
+          success: function(data){
+          }
+        }) 
+        window.location.href='https://h5.yeamoney.cn/mobileabout';
+    });
+    $('.moveheader>ul>li:nth-of-type(3)').tap(function(){
+        $.ajax({
+          type: 'GET',
+          url: '/clickRecord',
+          data: { btnName: "官方微信",btn3: "btn3" },
+          dataType: 'json',
+          timeout: 300,
+          success: function(data){
+            window.location.href='http://192.168.6.81:3901/qrpage';
+          }
+        });
+            });
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
